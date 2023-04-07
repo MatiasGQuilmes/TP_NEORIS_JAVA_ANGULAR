@@ -1,3 +1,8 @@
+ Proyecto realizado para Neoris, un sistema de gestion de empleados con la posibilidad de crear, editar, eliminar y listar empleados, el stack utilizado: 
+ 
+ Backend: Java - Springboot 
+ Frontend: Angular
+
 
 La aplicacion funciona de la siguiente forma:   
 
