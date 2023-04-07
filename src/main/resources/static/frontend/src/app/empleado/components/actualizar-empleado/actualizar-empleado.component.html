@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row justify-content-sm-center pt-5">
+        <div class="col-sm-6 shadow round pb-3">
+            <h1 class="text-center pt-3 text-secondary ">Actualizar Empleado</h1>
+            <form *ngIf="empleado" [formGroup]="formulario"  (ngSubmit)="actualizarEmpleado()">
+                <p *ngIf="respuestaError" class="alert alert-danger mt-2 p-2">{{respuestaError}}</p>
+                <div class="form-group">
+                    <label class="col-form-label">Nro de Documento:</label>
+                    <input id="nroDocumento" formControlName="nroDocumento" name="nroDocumento" type="number" class="form-control"  [(ngModel)]="empleado.nroDocumento"  required>
+                    <p *ngIf="formulario.get('nroDocumento')?.invalid" class="alert alert-danger mt-2 p-2">nro de documento invalido</p>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Nombre:</label>
+                    <input formControlName="nombre"  id="nombre" name="nombre" type="text" class="form-control" [(ngModel)]="empleado.nombre" >
+                    <p *ngIf="formulario.get('nombre')?.invalid" class="alert alert-danger mt-2 p-2">nombre invalido</p>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Apellido:</label>
+                    <input  formControlName="apellido"  id="apellido" name="apellido" type="text" class="form-control" [(ngModel)]="empleado.apellido">
+                    <p *ngIf="formulario.get('apellido')?.invalid" class="alert alert-danger mt-2 p-2">apellido invalido</p>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Email:</label>
+                    <input  formControlName="email" id="email" name="email" type="text" class="form-control" [(ngModel)]="empleado.email">
+                    <p *ngIf="formulario.get('email')?.invalid" class="alert alert-danger mt-2 p-2">email invalido</p>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Fecha de nacimiento:</label>
+                    <input formControlName="fechaNacimiento" id="fechaNacimiento" [min]="fechaNacimientoStrMinima" [max]="fechaNacimientoStrMaxima" name="fechaNacimiento" type="date" class="form-control" [(ngModel)]="empleado.fechaNacimiento" >
+                    
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Fecha de ingreso:</label>
+                    <input formControlName="fechaDeIngreso" id="fechaDeIngreso" [min]="fechaIngresoStrMinima" [max]="fechaIngresoStrMaxima" name="fechaDeIngreso" type="date" class="form-control"  [(ngModel)]="empleado.fechaDeIngreso" >
+                    <p *ngIf="formulario.get('fechaDeIngreso')?.invalid" class="alert alert-danger mt-2 p-2">fecha de
+                        ingreso invalido</p>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="button" class="btn btn-danger mt-2"  (click)="cancelarFormulario()" >Cancelar</button>
+                    <button type="submit" class="btn btn-dark mt-2" >Guardar</button>
+                </div>
+                
+            </form>
+            
+        </div>
+    </div>
+</div>

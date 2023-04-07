@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface JornadaRepository extends JpaRepository<Jornada, Long> {
 
 
+
 }

@@ -1,8 +1,10 @@
 package com.neoris.turnosrotativos.entities;
 
+import com.neoris.turnosrotativos.DTOS.JornadaEmpleadoDTO;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,24 +18,28 @@ public class Empleado {
     @GenericGenerator(name="native", strategy = "native")
     private Long id;
 
-    @Column(nullable = false )
-    private Integer dni;
+    @Column(name="nro_documento")
+    private Integer nroDocumento;
 
-    @Column(nullable = false)
+    @Column(name="nombre")
     private String nombre;
 
-    @Column(nullable = false)
+    @Column(name="apellido")
     private String apellido;
 
-    @Column(nullable = false)
+
+    @Column(name="email")
     private String email;
-    @Column(nullable = false)
+
+    @Column(name="fecha_nacimiento")
     private LocalDate fechaNacimiento;
 
-    @Column(nullable = false)
+
+    @Column(name="fecha_ingreso")
     private LocalDate fechaDeIngreso;
 
     private LocalDate fechaDeCreacion;
+
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="empleado", fetch = FetchType.LAZY)
     List<Jornada> jornadas = new ArrayList<>();
@@ -43,8 +49,8 @@ public class Empleado {
         this.fechaDeCreacion = LocalDate.now();
     }
 
-    public Empleado(Integer dni, String nombre, String apellido, String email, LocalDate fechaNacimiento, LocalDate fechaDeIngreso) {
-        this.dni = dni;
+    public Empleado(Integer nroDocumento, String nombre, String apellido, String email, LocalDate fechaNacimiento, LocalDate fechaDeIngreso) {
+        this.nroDocumento = nroDocumento;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -58,12 +64,12 @@ public class Empleado {
     }
 
 
-    public Integer getDni() {
-        return dni;
+    public Integer getNroDocumento() {
+        return nroDocumento;
     }
 
-    public void setDni(Integer dni) {
-        this.dni = dni;
+    public void setNroDocumento(Integer NroDocumento) {
+        this.nroDocumento = NroDocumento;
     }
 
     public String getNombre() {

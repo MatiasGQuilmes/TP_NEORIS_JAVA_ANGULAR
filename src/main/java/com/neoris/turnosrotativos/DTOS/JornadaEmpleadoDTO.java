@@ -5,12 +5,13 @@ import com.neoris.turnosrotativos.entities.Empleado;
 import com.neoris.turnosrotativos.entities.Jornada;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 public class JornadaEmpleadoDTO {
 
     private Long id;
 
-    private Integer dniEmpleado;
+    private Integer nroDocumentoEmpleado;
     private String nombreCompleto;
 
     private LocalDate fecha;
@@ -21,7 +22,7 @@ public class JornadaEmpleadoDTO {
 
     public JornadaEmpleadoDTO(Empleado empleado, Concepto concepto, Jornada jornada) {
         this.id = jornada.getId();
-        this.dniEmpleado = empleado.getDni();
+        this.nroDocumentoEmpleado = empleado.getNroDocumento();
         this.nombreCompleto = empleado.getNombre() + " " + empleado.getApellido();
         this.fecha = jornada.getFecha();
         this.concepto = concepto.getNombre();
@@ -33,11 +34,11 @@ public class JornadaEmpleadoDTO {
     }
 
     public Integer getDniEmpleado() {
-        return dniEmpleado;
+        return nroDocumentoEmpleado;
     }
 
     public void setDniEmpleado(Integer dniEmpleado) {
-        this.dniEmpleado = dniEmpleado;
+        this.nroDocumentoEmpleado = dniEmpleado;
     }
 
     public String getNombreCompleto() {

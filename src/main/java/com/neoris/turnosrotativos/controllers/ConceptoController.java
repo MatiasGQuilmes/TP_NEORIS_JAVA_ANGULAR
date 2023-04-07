@@ -18,7 +18,7 @@ public class ConceptoController {
     @Autowired
     ConceptoService conceptoService;
 
-
+    // HU 5
     @GetMapping("/conceptos")
     public ResponseEntity<List<Concepto>> obtenerConceptos(){
 

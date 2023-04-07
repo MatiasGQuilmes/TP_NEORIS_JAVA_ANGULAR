@@ -1,23 +1,31 @@
 package com.neoris.turnosrotativos.service;
 
+import com.neoris.turnosrotativos.DTOS.EmpleadoDTO;
 import com.neoris.turnosrotativos.entities.Empleado;
+import org.springframework.http.ResponseEntity;
 
-import java.util.List;
+
+import java.util.Optional;
 
 public interface EmpleadoService {
 
 
-    Empleado agregarEmpleado(Empleado empleado);
+    ResponseEntity<Object> agregarEmpleado(Empleado empleado);
 
-    List<Empleado> getEmpleados();
+    ResponseEntity<Object> getEmpleados();
 
-    Empleado getEmpleado(Long id);
+    Optional<EmpleadoDTO> getEmpleado(Long id);
+
+    Empleado empleado(Long id);
 
     Empleado findByDni(Integer dni);
 
     Empleado findByEmail(String email);
 
-    String eliminarEmpleado(Long id);
+    ResponseEntity<Object> eliminarEmpleado(Long id);
+
+    ResponseEntity<Object> actualizarEmpleado(Long id, Empleado empleado);
+
 
 
 }

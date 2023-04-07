@@ -1,0 +1,63 @@
+<app-header></app-header>
+<div class="container mt-5 d-flex align-items-center flex-column">
+    <!-- <h2>Detalles del empleado</h2> -->
+
+
+    <div class="card mt-4" style="width: 18rem;">
+        <img src="../../../../assets/istockphoto-666545204-612x612.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{empleado.nombre + ' ' + empleado.apellido}}</h5>
+          <p class="card-text"><b>Nro Documento:</b> {{empleado.nroDocumento}}</p>
+          <p class="card-text"><b>Email:</b> {{empleado.email}}</p>
+          <p class="card-text"><b>Fecha de nacimiento: </b>{{empleado.fechaNacimiento}}</p>
+          <p class="card-text"><b>Fecha de ingreso: </b>{{empleado.fechaDeIngreso}}</p>
+          <!-- <p class="card-text">Fecha de creacion del empleado: {{empleado.fechaDeCreacion}}</p> -->
+          <div class="d-flex justify-content-between">
+            <button  (click)="eliminarEmpleado(empleado.id)" class="btn btn-danger">eliminar</button>
+            <button (click)="actualizarEmpleado(empleado.id)" class="btn btn-primary">actualizar</button>
+          </div>      
+        </div>
+      </div>
+
+    <!-- <div class="d-flex justify-content-between mt-3">
+       
+        <div>
+            <div>
+                <label for=""><b>ID:</b> {{empleado.id}}</label>
+            </div>
+            <div>
+                <label for=""><b>Nro Documento:</b> {{empleado.nroDocumento}}</label>
+            </div>
+            <div>
+                <label for=""><b>Nombre:</b> {{empleado.nombre}}</label>
+            </div>
+            <div>
+                <label for=""><b>Apellido:</b> {{empleado.apellido}}</label>
+            </div>
+            <div>
+                <label for=""><b>Email:</b> {{empleado.email}}</label>
+            </div>
+        </div>
+        <div>
+            <div>
+                <label for=""><b>Fecha de nacimiento:</b> {{empleado.fechaNacimiento}}</label>
+            </div>
+            <div>
+                <label for=""><b>Fecha de ingreso:</b> {{empleado.fechaDeIngreso}}</label>
+            </div>
+            <div>
+                <label for=""><b>Fecha de creacion del empleado:</b> {{empleado.fechaDeCreacion}}</label>
+            </div>
+        </div>
+        
+
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div> -->
+</div>

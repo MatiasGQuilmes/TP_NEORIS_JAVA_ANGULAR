@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3dc1b599-d671-4f2d-a9a8-1f06ddad744e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/DTOS/ConceptoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/DTOS/EmpleadoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/configurations/SegurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/constantes/C_TURNOS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/DTOS/JornadaEmpleadoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/DTOS/JornadaEmpleadoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/TurnosrotativosApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/TurnosrotativosApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/controllers/ConceptoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/controllers/ConceptoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/controllers/EmpleadoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/controllers/EmpleadoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/controllers/JornadaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/controllers/JornadaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/entities/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/entities/Empleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/entities/Jornada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/entities/Jornada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/repositories/EmpleadoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/repositories/EmpleadoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/repositories/JornadaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/repositories/JornadaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/service/EmpleadoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/service/EmpleadoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/service/JornadaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/service/JornadaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/service/implement/EmpleadoServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/service/implement/EmpleadoServiceImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/service/implement/JornadaServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neoris/turnosrotativos/service/implement/JornadaServiceImplement.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2N9ivUnrWQdeXHyIAFx9wvoBf4I" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.neoris.turnosrotativos.configurations" />
+      <recent name="com.neoris.turnosrotativos.controllers" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TurnosRotativosApplication" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.neoris.turnosrotativos.TurnosrotativosApplication" />
+      <module name="turnosrotativos" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3dc1b599-d671-4f2d-a9a8-1f06ddad744e" name="Changes" comment="" />
+      <created>1679082932150</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679082932150</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.data.mapping.PropertyReferenceException" package="org.springframework.data.mapping" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

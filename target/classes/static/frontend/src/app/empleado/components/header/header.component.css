@@ -1,0 +1,42 @@
+.header{
+    background-color: #142128;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+}
+
+.img-logo{
+    width: 90px;
+}
+
+.header-text{
+    color: #d1d1d1;
+    font-size: 25px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
+
+.tp3-text{
+   display: none;
+}
+
+.btn-empleados{
+    margin-right: 20px;
+}
+
+@media( min-width: 644px){
+    .tp3-text{
+        display: flex;
+        margin-right: 20px;
+        letter-spacing: 1px;
+        font-family: monospace;
+        color: #d1d1d1;
+    }
+
+    .btn-empleados{
+        margin-right: unset;
+    }
+}

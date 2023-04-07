@@ -14,6 +14,7 @@ public class Jornada {
     @GenericGenerator(name="native", strategy = "native")
     private Long id;
 
+
     @Column(nullable = false)
     private Long empleado;
     @Column(nullable = false)
@@ -22,7 +23,7 @@ public class Jornada {
     @Column(nullable = false)
     private LocalDate fecha;
 
-    private Integer horasTrabajadas;
+    private Integer horasTrabajadas = 0; //para evitar null como me corregieron en el tp anterior
 
 
     public Jornada() {

@@ -7,16 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-import java.util.regex.Pattern;
-
-
 import javax.validation.Valid;
-import java.time.LocalDate;
-import java.time.Period;
 
-
-import java.util.List;
 
 
 
@@ -28,134 +20,47 @@ public class EmpleadoController {
     EmpleadoService empleadoService;
 
 
+
+    // HU 1
     @PostMapping("/empleados")
     public ResponseEntity<Object> agregarEmpleado(@Valid @RequestBody Empleado empleado){
 
-        LocalDate fechaActual = LocalDate.now();
-        Period periodo = Period.between(empleado.getFechaNacimiento(), fechaActual);
-        int edad = periodo.getYears();
-
-
-       Empleado empleadoDni = empleadoService.findByDni(empleado.getDni());
-       Empleado empleadoEmail = empleadoService.findByEmail(empleado.getEmail());
-
-
-       if(empleado.getDni() == null){
-           return new ResponseEntity<>("El campo dni es obligatorio.",HttpStatus.BAD_REQUEST);
-       }
-       if(empleado.getNombre().equals("")){
-           return new ResponseEntity<>("El campo nombre es obligatorio",HttpStatus.BAD_REQUEST);
-       }
-        if(empleado.getApellido().equals("")){
-            return new ResponseEntity<>("El campo apellido es obligatorio",HttpStatus.BAD_REQUEST);
-        }
-        if(empleado.getEmail().equals("")){
-            return new ResponseEntity<>("El campo email es obligatorio",HttpStatus.BAD_REQUEST);
-        }
-        if(empleado.getFechaNacimiento() == null){
-            return new ResponseEntity<>("El campo fecha de nacimiento es obligatorio",HttpStatus.BAD_REQUEST);
-        }
-        if(empleado.getFechaDeIngreso() == null){
-            return new ResponseEntity<>("El campo fecha de ingreso es obligatorio",HttpStatus.BAD_REQUEST);
-        }
-        if(empleado.getFechaNacimiento().isAfter(fechaActual)){
-            return new ResponseEntity<>("La fecha de nacimiento no puede ser posterior al día de la fecha.",HttpStatus.BAD_REQUEST);
-        }
-        if(edad < 18){
-            return new ResponseEntity<>("La edad del empleado no puede ser menor a 18 años",HttpStatus.BAD_REQUEST);
-        }
-        if(empleadoDni != null){
-                return new ResponseEntity<>("Ya existe un empleado con el documento ingresado.",HttpStatus.CONFLICT);
-        }
-        if(empleadoEmail != null){
-            return new ResponseEntity<>("Ya existe un empleado con el email ingresado.",HttpStatus.CONFLICT);
-        }
-        if(empleado.getFechaDeIngreso().isAfter(fechaActual)){
-            return new ResponseEntity<>("La fecha de ingreso no puede ser posterior al día de la fecha.",HttpStatus.BAD_REQUEST);
-        }
-        if (!formatoEmailValido(empleado.getEmail())) {
-            return new ResponseEntity<>("El email ingresado no es correcto.",HttpStatus.BAD_REQUEST);
-        }
-        if (!formatoNombreApellidoValido(empleado.getNombre())) {
-            return new ResponseEntity<>("Solo se permiten letras en el campo Nombre",HttpStatus.BAD_REQUEST);
-        }
-
-        if (!formatoNombreApellidoValido(empleado.getApellido())) {
-            return new ResponseEntity<>("Solo se permiten letras en el campo Apellido",HttpStatus.BAD_REQUEST);
-        }
-
-
-
-        Empleado empleadoAgregado = empleadoService.agregarEmpleado(empleado);
-
-        return new ResponseEntity<>(empleadoAgregado, HttpStatus.CREATED);
+        return new ResponseEntity<>(empleadoService.agregarEmpleado(empleado), HttpStatus.CREATED);
     }
 
-
+    // HU 2
     @GetMapping("/empleados")
-    public ResponseEntity<List<Empleado>> obtenerEmpleados(){
+    public ResponseEntity<Object> obtenerEmpleados(){
 
         return new ResponseEntity<>(empleadoService.getEmpleados(),HttpStatus.OK);
     }
 
+
+    // HU 3
     @GetMapping("/empleados/{id}")
     public ResponseEntity<Object> obtenerEmpleado(@PathVariable Long id){
 
-        Empleado empleado = empleadoService.getEmpleado(id);
-        if(empleado != null){
-            return new ResponseEntity<>(empleado,HttpStatus.OK);
-        }else{
-            return new ResponseEntity<>("No se encontro el empleado con el id: " + id,HttpStatus.NOT_FOUND);
-        }
-
-
-    }
-
-    @DeleteMapping("/empleados/{id}")
-    public ResponseEntity<String> eliminarConcepto(@PathVariable Long id){
-
-        Optional<Empleado> empleado = Optional.ofNullable(empleadoService.getEmpleado(id));
-
-        if (empleado.isEmpty()) {
-            return new ResponseEntity<>("No se encontro el empleado con el id: " + id, HttpStatus.NOT_FOUND);
-        }
-        empleadoService.eliminarEmpleado(id);
-        return new ResponseEntity<>("El empleado fue eliminado con éxito.", HttpStatus.NO_CONTENT);
-
+        return new ResponseEntity<>(empleadoService.getEmpleado(id), HttpStatus.OK);
     }
 
 
-    @PatchMapping("/empleados/editar/{id}")
+    // HU 4
+
+    @PatchMapping("/empleados/{id}")
     public ResponseEntity<Object> actualizarEmpleado(@PathVariable Long id, @RequestBody Empleado empleadoAct){
 
-        Optional<Empleado> empleadoEncontrado = Optional.ofNullable(empleadoService.getEmpleado(id));
+        return new ResponseEntity<>(empleadoService.actualizarEmpleado(id, empleadoAct), HttpStatus.OK);
+    }
 
-        if (empleadoEncontrado.isEmpty()) {
-            return new ResponseEntity<>("No se encontro el empleado con el id: " + id, HttpStatus.NOT_FOUND);
-        }
+    // HU 8
+    @DeleteMapping("/empleados/{id}")
+    public ResponseEntity<Object> eliminarEmpleado(@PathVariable Long id){
 
-        Empleado empleado = empleadoEncontrado.get();
-        empleado.setDni(empleadoAct.getDni());
-        empleado.setNombre(empleadoAct.getNombre());
-        empleado.setApellido(empleadoAct.getApellido());
-        empleado.setEmail(empleadoAct.getEmail());
-        empleado.setFechaNacimiento(empleadoAct.getFechaNacimiento());
-        empleado.setFechaDeIngreso(empleadoAct.getFechaDeIngreso());
+        return new ResponseEntity<>(empleadoService.eliminarEmpleado(id), HttpStatus.NO_CONTENT);
 
-
-        empleadoService.agregarEmpleado(empleado);
-
-        return new ResponseEntity<>(empleado, HttpStatus.OK);
     }
 
 
-    private boolean formatoEmailValido(String email) {
-        Pattern pattern = Pattern.compile("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
-        return pattern.matcher(email).matches();
-    }
-    private boolean formatoNombreApellidoValido(String name) {
-        Pattern pattern = Pattern.compile("^[a-zA-Z]+$");
-        return pattern.matcher(name).matches();
-    }
+
 
 }
